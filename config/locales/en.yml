@@ -1,4 +1,10 @@
 en:
+  activerecord:
+    attributes:
+      customer:
+        pAccName: "Account name"
+        pPartner: "Partner"
+        tel_number: "Telephone number"
   hello: "Hello world"
   warnings:
     page_dont_exist: "Unfortunatly page you requested doesn't exist"
