@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap', '>= 4.3.1'
+gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'execjs'
 gem 'httparty'
