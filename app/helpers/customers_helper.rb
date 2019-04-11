@@ -1,2 +1,2 @@
-module CustomerHelper
+module CustomersHelper
 end
