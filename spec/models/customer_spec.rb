@@ -85,6 +85,20 @@ RSpec.describe Customer, type: :model do
     lead.valid?
     expect(lead.errors[:business_name]).to include("is too long (maximum is 100 characters)")
   end
-  it 'is invalid with a tel_number of more than 13 chars'
-  it 'is invalid with an email of more than 80 chars'
+
+  it 'is invalid with a tel_number of more than 13 chars' do
+    lead = Customer.new(
+                       tel_number: "7" * 14
+    )
+    lead.valid?
+    expect(lead.errors[:tel_number]).to include("is too long (maximum is 13 characters)")
+  end
+
+  it 'is invalid with an email of more than 80 chars' do
+    lead = Customer.new(
+                       email: "e" * 81
+    )
+    lead.valid?
+    expect(lead.errors[:email]).to include("is too long (maximum is 80 characters)")
+  end
 end
