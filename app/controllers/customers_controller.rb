@@ -43,12 +43,12 @@ class CustomersController < ApplicationController
   end
 
   def create_request_body(customer)
-    body = "access_token=#{ENV['LEAD_API_ACCESS_TOKEN']}&pGUID=#{customer.pGUID}"
-    body += "&pAccName=#{customer.pAccName}&pPartner=#{customer.pPartner}"
-    body += "&name=#{customer.name}&business_name=#{customer.business_name}"
-    body += "&telephone_number=#{customer.tel_number}&email=#{customer.email}"
-    body += "&contact_time=#{customer.contact_time}&notes=#{customer.notes}"
-    body += "&reference=#{customer.reference}"
+    body = "access_token=#{ENV['LEAD_API_ACCESS_TOKEN']}&pGUID=#{customer.pGUID}" \
+        "&pAccName=#{customer.pAccName}&pPartner=#{customer.pPartner}" \
+        "&name=#{customer.name}&business_name=#{customer.business_name}" \
+        "&telephone_number=#{customer.tel_number}&email=#{customer.email}" \
+        "&contact_time=#{customer.contact_time}&notes=#{customer.notes}" \
+        "&reference=#{customer.reference}"
   end
 
   def customer_params
