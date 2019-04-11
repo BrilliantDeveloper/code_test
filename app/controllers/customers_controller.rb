@@ -32,11 +32,10 @@ class CustomersController < ApplicationController
     # success response
     error_string = "We're sorry but we're unable to accept your contact request" \
                  " at this time. Please try again later."
-byebug
     if resp.code == 201
       # display success message
       flash[:success] = "#{@customer.name}, Thank you for your submission!" \
-                        " We'll contact you on #{@customer.contact_time}"
+                        " We'll contact you on #{@customer.contact_time.strftime('%Y-%m-%d %H:%M:%S')}"
       redirect_to root_path
     else
       flash[:danger] = error_string
