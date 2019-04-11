@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
 
     if @customer.valid?
       # submit to api
-      byebug
+
       resp = HTTParty.post(ENV['LEAD_API_URI'], {
           body: create_request_body(@customer),
           headers: {
@@ -19,27 +19,30 @@ class CustomersController < ApplicationController
             'charset' => 'utf-8'
           }
       })
+      # check response received
       process_response(resp)
     else
       render 'new'
     end
-    # byebug
   end
 
   private
 
   def process_response(resp)
     # success response
-    byebug
+    error_string = "We're sorry but we're unable to accept your contact request" \
+                 " at this time. Please try again later."
+
     if resp.code == 201
       # display success message
-      flash[:success] = "Thank you for your submission! We'll contact you on #{@customer.contact_time}"
+      flash[:success] = "#{@customer.name}, Thank you for your submission!" \
+                        " We'll contact you on #{@customer.contact_time}"
       redirect_to root_path
+    else
+      flash[:danger] = error_string
+      render 'new'
     end
 
-    if resp.code == 400
-
-    end
   end
 
   def create_request_body(customer)
