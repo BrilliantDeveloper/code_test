@@ -13,4 +13,5 @@ db/*.sqlite3
 db/*.sql
 puma_staging.rb
 public/assets
+.idea/
 **/Thumbs.db
