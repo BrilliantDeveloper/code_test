@@ -1,10 +1,22 @@
-test:
-  adapter:  sqlite3
-  database: db/test_database.sqlite3
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter:  sqlite3
-  database: db/development_database.sqlite3
+  <<: *default
+  database: code_test_development
+  username: ttam
+  password: guest
+
+test:
+  <<: *default
+  database: code_test_test
+  username: ttam
+  password: guest
+
 
 staging:
   adapter:  sqlite3

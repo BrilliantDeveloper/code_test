@@ -32,7 +32,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails', '~> 0.3'
   gem 'rubocop'
-  gem 'sqlite3', '~> 1.3.6'
+  gem 'pg', '>= 0.18', '< 2.0'
   gem 'sshkit-sudo'
 end
 
