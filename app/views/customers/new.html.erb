@@ -1,59 +1,61 @@
 
 
 
-<div id="customer-form">
+
   <h1>Sign up</h1>
+
   <div class="row" >
     <div class="col-md-6 col-md-offset-3">
       <%= form_for(@customer) do |f| %>
+
+
+            <%= render 'shared/error_messages' %>
+
+
           <div class="form-group">
+            <%= f.label :AccountName, class: 'col-form-label' %>
+            <%= f.text_field :pAccName, class: 'form-control' %>
           </div>
 
-          <div class="form-group row">
 
-            <%= f.label :pAccName, class: 'col-sm-3  col-form-label' %>
-            <%= f.text_field :pAccName, class: 'col-sm-9 form-control' %>
-
+          <div class="form-group">
+            <%= f.label :Partner, class: 'col-form-label' %>
+            <%= f.text_field :pPartner, class: 'form-control' %>
           </div>
 
-          <div class="form-group  row">
-            <%= f.label :pPartner, class: 'col-sm-3  col-form-label' %>
-            <%= f.text_field :pPartner, class: 'col-sm-9 form-control' %>
+          <div class="form-group">
+            <%= f.label :name, class:  'col-form-label'  %>
+            <%= f.text_field :name, class: 'form-control' %>
           </div>
 
-          <div class="form-group  row">
-            <%= f.label :name, class: 'col-sm-3  col-form-label'  %>
-            <%= f.text_field :name, class: 'col-sm-9 form-control' %>
+          <div class="form-group">
+            <%= f.label :business_name, class: 'col-form-label'  %>
+            <%= f.text_field :business_name, class: 'form-control' %>
           </div>
 
-          <div class="form-group  row">
-            <%= f.label :business_name, class: 'col-sm-3  col-form-label'  %>
-            <%= f.text_field :business_name, class: 'col-sm-9 form-control' %>
+          <div class="form-group">
+            <%= f.label :tel_number, class: 'col-form-label'  %>
+            <%= f.text_field :tel_number, class: 'form-control' %>
           </div>
 
-          <div class="form-group  row">
-            <%= f.label :tel_number, class: 'col-sm-3  col-form-label'  %>
-            <%= f.text_field :tel_number, class: 'col-sm-9 form-control' %>
+          <div class="form-group">
+            <%= f.label :email, class: 'col-form-label'  %>
+            <%= f.text_field :email, class: 'form-control' %>
           </div>
 
-          <div class="form-group  row">
-            <%= f.label :email, class: 'col-sm-3  col-form-label'  %>
-            <%= f.text_field :email, class: 'col-sm-9 form-control' %>
+          <div class="form-group">
+            <%= f.label :contact_time, class: 'col-form-label'  %>
+            <%= f.text_field :contact_time, class: 'form-control' %>
           </div>
 
-          <div class="form-group  row">
-            <%= f.label :contact_time, class: 'col-sm-3  col-form-label'  %>
-            <%= f.text_field :contact_time, class: 'col-sm-9 form-control' %>
+          <div class="form-group">
+            <%= f.label :notes, class: 'col-form-label'  %>
+            <%= f.text_area :notes, class: 'form-control' %>
           </div>
 
-          <div class="form-group  row">
-            <%= f.label :notes, class: 'col-sm-3  col-form-label'  %>
-            <%= f.text_field :notes, class: 'col-sm-9 form-control' %>
-          </div>
-
-          <div class="form-group  row">
-            <%= f.label :reference, class: 'col-sm-3  col-form-label'  %>
-            <%= f.text_field :reference, class: 'col-sm-9 form-control' %>
+          <div class="form-group">
+            <%= f.label :reference, class: 'col-form-label'  %>
+            <%= f.text_field :reference, class: 'form-control' %>
           </div>
 
           <div class="text-center">
@@ -65,5 +67,4 @@
     </div>
 
   </div>
-</div>
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'customer#new'
-  post '/create', to: 'customer#create'
+  root 'customers#new'
+ # post 'create', to: 'customers#create'
+  resources :customers, only: [:new, :create]
 end
